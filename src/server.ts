@@ -1,6 +1,6 @@
 import fastify from "fastify";
-import { connectDb } from "./config/database";
 import "dotenv/config";
+import { connectDb } from "./config";
 
 const app = fastify();
 
