@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { isValidPhone } from "../utils/phone";
-import { sendTwilioOTP, verifyTwilioOtp } from "../service/twilio";
-import { Customer, DeliveryPartner } from "../models";
-import { generateToken, verifyRefreshToken } from "../helpers/tokenHelper";
+import { isValidPhone } from "../../utils/phone";
+import { sendTwilioOTP, verifyTwilioOtp } from "../../service/twilio";
+import { Customer, DeliveryPartner } from "../../models";
+import { generateToken, verifyRefreshToken } from "../../helpers/tokenHelper";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 export const sendOtp = async (
