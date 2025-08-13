@@ -5,6 +5,6 @@ import { orderRoute } from "./order";
 
 export const appRoute = async (fastify: FastifyInstance) => {
   await fastify.register(authRoute, { prefix: "/auth" });
-  await fastify.register(productRoute, { prefix: "/product" });
-  await fastify.register(orderRoute, { prefix: "/order" });
+  await fastify.register(productRoute, { prefix: "/products" });
+  await fastify.register(orderRoute, { prefix: "/orders" });
 };

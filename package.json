@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "seedScript":"ts-node --respawn --transpile-only seedScript.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
