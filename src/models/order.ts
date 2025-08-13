@@ -20,7 +20,7 @@ const orderSchema = new mongoose.Schema({
     ref: "Branch",
     required: true,
   },
-  item: [
+  items: [
     {
       id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -55,7 +55,7 @@ const orderSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["available,confirm", "arriving", "delivered", "cancel"],
+    enum: ["available", "confirmed", "arriving", "delivered", "cancelled"],
     default: "available",
   },
   totalPrice: { type: Number, required: true },
