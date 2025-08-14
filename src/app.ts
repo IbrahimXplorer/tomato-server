@@ -3,6 +3,7 @@ import "dotenv/config";
 import { connectDb } from "./configs";
 import { appRoute } from "./routes";
 import fastifySocketIO from "fastify-socket.io";
+import { admin, buildAdminRouter } from "./configs/setup";
 
 const app = fastify();
 
@@ -25,6 +26,8 @@ const startServer = async () => {
 
     await app.register(appRoute, { prefix: "/api" });
 
+    await buildAdminRouter(app)
+
     await app.listen({ port: +PORT, host: "0.0.0.0" });
 
     app.ready().then(() => {
@@ -40,7 +43,7 @@ const startServer = async () => {
       });
     });
 
-    console.log(`🚀 Grocery app running at http://localhost:${PORT}`);
+    console.log(`🚀 Grocery app running at http://localhost:${PORT}${admin.options.rootPath}`);
   } catch (error) {
     app.log.error(error);
 
